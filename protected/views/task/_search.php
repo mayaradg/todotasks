@@ -11,37 +11,37 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'title'); ?>
+		<?php echo $form->label($model, 'Título'); ?>
 		<?php echo $form->textField($model, 'title', array('maxlength' => 255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'task_id'); ?>
+		<?php echo $form->label($model, 'Tipo'); ?>
 		<?php echo $form->dropDownList($model, 'task_id', GxHtml::listDataEx(TaskType::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'user'); ?>
+		<?php echo $form->label($model, 'Usuário'); ?>
 		<?php echo $form->textField($model, 'user'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'public'); ?>
+		<?php echo $form->label($model, 'Pública'); ?>
 		<?php echo $form->dropDownList($model, 'public', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'description'); ?>
+		<?php echo $form->label($model, 'Descrição'); ?>
 		<?php echo $form->textArea($model, 'description'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'done'); ?>
+		<?php echo $form->label($model, 'Completa'); ?>
 		<?php echo $form->dropDownList($model, 'done', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'conclusion_date'); ?>
+		<?php echo $form->label($model, 'Data de Conclusão'); ?>
 		<?php $form->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'model' => $model,
 			'attribute' => 'conclusion_date',
@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
+		<?php echo GxHtml::submitButton(Yii::t('app', 'Buscar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

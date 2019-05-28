@@ -24,7 +24,7 @@ abstract class BaseTaskType extends GxActiveRecord {
 	}
 
 	public static function label($n = 1) {
-		return Yii::t('app', 'TaskType|TaskTypes', $n);
+		return Yii::t('app', 'Tipo de Tarefa|Tipos de Tarefa', $n);
 	}
 
 	public static function representingColumn() {
@@ -52,7 +52,7 @@ abstract class BaseTaskType extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => Yii::t('app', 'ID'),
-			'name' => Yii::t('app', 'Name'),
+			'name' => Yii::t('app', 'Nome'),
 		);
 	}
 

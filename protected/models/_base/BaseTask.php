@@ -31,7 +31,7 @@ abstract class BaseTask extends GxActiveRecord {
 	}
 
 	public static function label($n = 1) {
-		return Yii::t('app', 'Task|Tasks', $n);
+		return Yii::t('app', 'Tarefa|Tarefas', $n);
 	}
 
 	public static function representingColumn() {
@@ -63,13 +63,13 @@ abstract class BaseTask extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => Yii::t('app', 'ID'),
-			'title' => Yii::t('app', 'Title'),
+			'title' => Yii::t('app', 'Título'),
 			'task_id' => null,
-			'user' => Yii::t('app', 'User'),
-			'public' => Yii::t('app', 'Public'),
-			'description' => Yii::t('app', 'Description'),
-			'done' => Yii::t('app', 'Done'),
-			'conclusion_date' => Yii::t('app', 'Conclusion Date'),
+			'user' => Yii::t('app', 'Usuário'),
+			'public' => Yii::t('app', 'Pública'),
+			'description' => Yii::t('app', 'Descrição'),
+			'done' => Yii::t('app', 'Concluída'),
+			'conclusion_date' => Yii::t('app', 'Data de Conclusão'),
 			'task' => null,
 		);
 	}

@@ -14,37 +14,37 @@
 	<?php echo $form->errorSummary($model); ?>
 
 		<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
+		<?php echo $form->labelEx($model,'Título'); ?>
 		<?php echo $form->textField($model, 'title', array('maxlength' => 255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'task_id'); ?>
+		<?php echo $form->labelEx($model,'Tipo'); ?>
 		<?php echo $form->dropDownList($model, 'task_id', GxHtml::listDataEx(TaskType::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'task_id'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'user'); ?>
+		<?php echo $form->labelEx($model,'Usuário'); ?>
 		<?php echo $form->textField($model, 'user'); ?>
 		<?php echo $form->error($model,'user'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'public'); ?>
+		<?php echo $form->labelEx($model,'Pública'); ?>
 		<?php echo $form->checkBox($model, 'public'); ?>
 		<?php echo $form->error($model,'public'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->labelEx($model,'Descrição'); ?>
 		<?php echo $form->textArea($model, 'description'); ?>
 		<?php echo $form->error($model,'description'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'done'); ?>
+		<?php echo $form->labelEx($model,'Completa'); ?>
 		<?php echo $form->checkBox($model, 'done'); ?>
 		<?php echo $form->error($model,'done'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'conclusion_date'); ?>
+		<?php echo $form->labelEx($model,'Data de Conclusão'); ?>
 		<?php $form->widget('zii.widgets.jui.CJuiDatePicker', array(
 			'model' => $model,
 			'attribute' => 'conclusion_date',
@@ -61,7 +61,7 @@
 
 
 <?php
-echo GxHtml::submitButton(Yii::t('app', 'Save'));
+echo GxHtml::submitButton(Yii::t('app', 'Salvar'));
 $this->endWidget();
 ?>
 </div><!-- form -->

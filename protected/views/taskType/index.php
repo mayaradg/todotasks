@@ -2,12 +2,12 @@
 
 $this->breadcrumbs = array(
 	TaskType::label(2),
-	Yii::t('app', 'Index'),
+	Yii::t('app', 'Lista'),
 );
 
 $this->menu = array(
-	array('label'=>Yii::t('app', 'Create') . ' ' . TaskType::label(), 'url' => array('create')),
-	array('label'=>Yii::t('app', 'Manage') . ' ' . TaskType::label(2), 'url' => array('admin')),
+	array('label'=>Yii::t('app', 'Criar') . ' ' . TaskType::label(), 'url' => array('create')),
+	array('label'=>Yii::t('app', 'Gerenciar') . ' ' . TaskType::label(2), 'url' => array('admin')),
 );
 ?>
 
