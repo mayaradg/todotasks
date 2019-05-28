@@ -1,0 +1,19 @@
+2019/05/28 12:00:24 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'todotasks' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(443): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(452): MigrateCommand->getDbConnection()
+#5 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(483): MigrateCommand->getMigrationHistory(-1)
+#6 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(85): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp(Array)
+#8 /var/www/html/yii/framework/console/CConsoleCommand.php(173): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#9 /var/www/html/yii/framework/console/CConsoleCommandRunner.php(68): CConsoleCommand->run(Array)
+#10 /var/www/html/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#11 /var/www/html/yii/framework/base/CApplication.php(162): CConsoleApplication->processRequest()
+#12 /var/www/html/yii/framework/yiic.php(34): CApplication->run()
+#13 /var/www/html/todotasks/protected/yiic.php(7): require_once('/var/www/html/y...')
+#14 {main}
+---
+2019/05/28 12:01:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'todo_tasks.tbl_migration' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_migration`.

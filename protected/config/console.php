@@ -3,27 +3,43 @@
 // This is the configuration for yiic console application.
 // Any writable CConsoleApplication properties can be configured here.
 return array(
+	
+
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Console Application',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
 
+	//gii configuration
+	
+	'import' => array(
+		'ext.giix-components.*', // giix components
+	),
+
+	'modules' => array(
+		'gii' => array(
+			'class' => 'system.gii.GiiModule',
+			'generatorPaths' => array(
+				'ext.giix-core', // giix generators
+			),
+		),
+	),
+
 	// application components
 	'components'=>array(
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+		),*/
 		// uncomment the following to use a MySQL database
-		/*
+		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=todo_tasks',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root@123',
 			'charset' => 'utf8',
 		),
-		*/
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
