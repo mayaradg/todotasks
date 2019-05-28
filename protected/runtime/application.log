@@ -17,3 +17,53 @@ Stack trace:
 #14 {main}
 ---
 2019/05/28 12:01:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'todo_tasks.tbl_migration' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_migration`.
+2019/05/28 14:27:57 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'task_type_id' doesn't exist in table. The SQL statement executed was: ALTER TABLE `task` ADD CONSTRAINT `fk_task_type` FOREIGN KEY (`task_type_id`) REFERENCES `task_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2019/05/28 14:27:57 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'task_type_id' doesn't exist in table. The SQL statement executed was: ALTER TABLE `task` ADD CONSTRAINT `fk_task_type` FOREIGN KEY (`task_type_id`) REFERENCES `task_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE in /var/www/html/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(1362): CDbCommand->execute()
+#1 /var/www/html/yii/framework/db/CDbMigration.php(344): CDbCommand->addForeignKey('fk_task_type', 'task', 'task_type_id', 'task_type', 'id', 'CASCADE', 'CASCADE')
+#2 /var/www/html/todotasks/protected/migrations/m190528_165659_create_task_table.php(17): CDbMigration->addForeignKey('fk_task_type', 'task', 'task_type_id', 'task_type', 'id', 'CASCADE', 'CASCADE')
+#3 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(386): m190528_165659_create_task_table->up()
+#4 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(110): MigrateCommand->migrateUp('m190528_165659_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 /var/www/html/yii/framework/console/CConsoleCommand.php(173): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 /var/www/html/yii/framework/console/CConsoleCommandRunner.php(68): CConsoleCommand->run(Array)
+#8 /var/www/html/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 /var/www/html/yii/framework/base/CApplication.php(162): CConsoleApplication->processRequest()
+#10 /var/www/html/yii/framework/yiic.php(34): CApplication->run()
+#11 /var/www/html/todotasks/protected/yiic.php(7): require_once('/var/www/html/y...')
+#12 {main}
+---
+2019/05/28 14:29:02 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'task' already exists. The SQL statement executed was: CREATE TABLE `task` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`title` varchar(255) NOT NULL,
+	`user` int NOT NULL,
+	`public` tinyint(1) NOT NULL,
+	`description` text NOT NULL,
+	`done` tinyint(1) NOT NULL,
+	`conclusion_date` date
+).
+2019/05/28 14:29:02 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'task' already exists. The SQL statement executed was: CREATE TABLE `task` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`title` varchar(255) NOT NULL,
+	`user` int NOT NULL,
+	`public` tinyint(1) NOT NULL,
+	`description` text NOT NULL,
+	`done` tinyint(1) NOT NULL,
+	`conclusion_date` date
+) in /var/www/html/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbCommand.php(1251): CDbCommand->execute()
+#1 /var/www/html/yii/framework/db/CDbMigration.php(229): CDbCommand->createTable('task', Array, NULL)
+#2 /var/www/html/todotasks/protected/migrations/m190528_165659_create_task_table.php(8): CDbMigration->createTable('task', Array)
+#3 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(386): m190528_165659_create_task_table->up()
+#4 /var/www/html/yii/framework/cli/commands/MigrateCommand.php(110): MigrateCommand->migrateUp('m190528_165659_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 /var/www/html/yii/framework/console/CConsoleCommand.php(173): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 /var/www/html/yii/framework/console/CConsoleCommandRunner.php(68): CConsoleCommand->run(Array)
+#8 /var/www/html/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 /var/www/html/yii/framework/base/CApplication.php(162): CConsoleApplication->processRequest()
+#10 /var/www/html/yii/framework/yiic.php(34): CApplication->run()
+#11 /var/www/html/todotasks/protected/yiic.php(7): require_once('/var/www/html/y...')
+#12 {main}
+---
